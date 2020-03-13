@@ -5,7 +5,7 @@ Some german workaround and configurations are included but can be removed or cha
 
 ## How to use
 0. Install latex obviously
-1. Get repo `git clone TODO`
+1. Get repo `git clone git@github.com:DavidM42/Latex-Starter.git`
 2. Install and setup [latex workshop addon](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (for [more info](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install))
 3. Install [ltex addon](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex) for spellchecking
 4. Install language pack addon for your language (just search `ltex <your_language> support` in vscode marketplace)
