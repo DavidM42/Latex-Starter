@@ -1,0 +1,20 @@
+# name of main file as pdf
+main.pdf
+
+# maybe some example folder to not commit if exists
+examples/
+
+# All temporary latex compile files by pipeline
+*.bcf
+*.xml
+**/*.run.xml
+**/*.synctex
+**/*.synctex*
+**/*.synctex.gz
+**/*.bcf
+**/*.aux
+**/*.bbl
+**/*.blg
+**/*.log
+**/*.out
+**/*.toc

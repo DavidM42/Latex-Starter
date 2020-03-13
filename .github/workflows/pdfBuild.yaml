@@ -1,0 +1,24 @@
+name: PDF Builder
+
+on:
+  # Trigger the workflow only on push to master branch
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v1
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@master
+        with:
+          args: "-xelatex -file-line-error -interaction=nonstopmode"
+          root_file: main.tex
+      - name: Upload pdf as artifact to workflow
+        uses: actions/upload-artifact@v1
+        with:
+          name: main-other-name-in-zip-artifact.pdf
+          path: main.pdf

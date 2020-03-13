@@ -1,0 +1,73 @@
+{
+    // change spellcheck language here if want to change to english
+    "ltex.language": "de-DE",
+
+    // results in longer built times cause less caching but can solve problems with invalid cache file
+    // "latex-workshop.latex.autoClean.run": "onBuilt",
+    
+    // create pdf files for sections if you save them when is true
+    // only want to create main pdf file so set false
+    "latex-workshop.latex.rootFile.useSubFile": false,
+    
+    // latex workshop toolchain for use with biblatex
+    // biblatex receipe found 
+    // here https://tex.stackexchange.com/questions/459640/implementing-biber-for-biblatex-in-microsoft-visual-studio-code/459933
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopumode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex -> biber -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "biber",
+                "xelatex",
+                "xelatex"
+            ]
+        }
+    ],
+    // latex temp compile files don't show in explorer to not distract
+    // remove these line if you want to see them in vscode
+    "files.exclude": {
+        "**/*.run.xml": true,
+        "**/*.synctex": true,
+        "**/*.synctex*": true,
+        "**/*.synctex.gz": true,
+        "**/*.bcf": true,
+        "**/*.aux": true,
+        "**/*.bbl": true,
+        "**/*.blg": true,
+        "**/*.log": true,
+        "**/*.out": true,
+        "**/*.toc": true,
+    },
+
+
+    // ltex spelling config
+    // set all to be workspace specific
+    "ltex.enabled": true,
+    "ltex.configurationTarget": {
+        "addToDictionary": "workspaceFolder",
+        "disableRule": "workspaceFolder",
+        "ignoreRuleInSentence": "workspaceFolder"
+    }
+
+    // ltex will write many ignored rules here or new dictionary entries to commit with your repo
+    // if not want to commit with it change that via gitignore or ltex config above
+}
