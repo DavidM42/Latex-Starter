@@ -22,3 +22,15 @@ jobs:
         with:
           name: main-other-name-in-zip-artifact.pdf
           path: main.pdf
+      - name: Commit files for pages
+        run: |
+          cp main.pdf ./public/
+          git add public/main.pdf
+          git config --local user.email "action@example.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "New pdf build for pages" -a
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

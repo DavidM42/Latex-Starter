@@ -1,12 +1,16 @@
-# name of main file as pdf
-main.pdf
+# generelly do not commit pdfs as generelly are previews
+*.pdf
+
+# but explicetly commit pdfs in public folder
+# since those are generated for github pages
+!public/*.pdf
 
 # maybe some example folder to not commit if exists
 examples/
 
 # All temporary latex compile files by pipeline
-*.bcf
-*.xml
+**/*.bcf
+**/*.xml
 **/*.run.xml
 **/*.synctex
 **/*.synctex*
@@ -18,3 +22,8 @@ examples/
 **/*.log
 **/*.out
 **/*.toc
+
+# existed and caused issue in gh pages action
+**/*.fdb_latexmk
+**/*.fls
+**/*.xdv
