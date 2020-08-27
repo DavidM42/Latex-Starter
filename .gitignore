@@ -5,6 +5,10 @@
 # since those are generated for github pages
 !public/*.pdf
 
+# of course also commit appendix included pdfs
+!appendix/*.pdf
+!appendix/**/**.pdf
+
 # maybe some example folder to not commit if exists
 examples/
 
