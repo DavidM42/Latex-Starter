@@ -80,11 +80,22 @@
 
 \keywords{keywordOne,lorem,ipsum}
 
+% able to cut down to page limits with this margin trick
+% especially thick 2.5cm bottom margin can be reduced
+%\geometry{bottom=1.7cm}
+% possible values: left,right,bottom,top,hmargin,vmargin
+% accepts centimeters as cm and inches as in
+
 \begin{document}
 
 \maketitle
 
 \newpage
+
+% disables page numbering and shorttitle show on table of content pages
+% thanks to https://tex.stackexchange.com/a/2996
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
 \tableofcontents
 
 \newpage
@@ -96,6 +107,8 @@
 \subfile{sections/sectionOne}
 
 \newpage
+% other more space efficient way to seperate sections
+% \vspace*{0.5 cm}
 \section{Section Two}
 \subfile{sections/sectionTwo}
 
