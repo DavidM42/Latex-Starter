@@ -86,6 +86,14 @@
 % possible values: left,right,bottom,top,hmargin,vmargin
 % accepts centimeters as cm and inches as in
 
+% thanks https://tex.stackexchange.com/a/483040
+% only use this while writing on large files 
+% and want to save time at compilation on save
+% many images blow up size if compression is disabled here
+% and if compression is enabled they blow up build time
+% final pdf should be gzipped so comment out then
+% \special{dvipdfmx:config z 0}
+
 \begin{document}
 
 \maketitle
