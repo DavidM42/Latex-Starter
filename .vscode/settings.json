@@ -1,4 +1,7 @@
 {
+    // auto wrap lines
+    "editor.wordWrap": "on",
+    
     // change spellcheck language here if want to change to english
     "ltex.language": "de-DE",
 
