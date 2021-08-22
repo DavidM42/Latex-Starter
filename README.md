@@ -30,9 +30,8 @@ You may have to turn off github pages in the repository settings or switch them 
 1. Fork repo, use as template or clone repo directly `git clone git@github.com:DavidM42/Latex-Starter.git`
 2. Install and setup [latex workshop addon](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (for [more info](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install))
 3. Install [ltex addon](https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex) for spellchecking
-4. Install language pack addon for your language (just search `ltex <your_language> support` in vscode marketplace)
-5. For language config see localization
-6. Start editing!
+4. For language config see localization
+5. Start editing!
 The addon willl start building and refreshing the pdf on every save
 
 
