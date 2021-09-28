@@ -32,13 +32,21 @@
             "args": [
                 "%DOCFILE%"
             ]
+        },
+        {
+            "name": "makeglossaries",
+            "command": "makeglossaries",
+            "args": [
+                "%DOCFILE%"
+            ]
         }
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "xelatex -> biber -> xelatex*2",
+            "name": "xelatex -> makeglossaries -> biber -> xelatex*2",
             "tools": [
                 "xelatex",
+                "makeglossaries",
                 "biber",
                 "xelatex",
                 "xelatex"
@@ -59,6 +67,13 @@
         "**/*.log": true,
         "**/*.out": true,
         "**/*.toc": true,
+        "**/*.acn": true,
+        "**/*.acr": true,
+        "**/*.alg": true,
+        "**/*.glg": true,
+        "**/*.glo": true,
+        "**/*.gls": true,
+        "**/*.ist": true,
     },
 
 

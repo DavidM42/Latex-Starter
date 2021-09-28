@@ -27,6 +27,15 @@ examples/
 **/*.out
 **/*.toc
 
+# temporary latex compile files because of glossary
+**/*.acn
+**/*.acr
+**/*.alg
+**/*.glg
+**/*.glo
+**/*.gls
+**/*.ist
+
 # existed and caused issue in gh pages action
 **/*.fdb_latexmk
 **/*.fls

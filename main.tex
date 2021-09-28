@@ -55,6 +55,9 @@
 % thanks https://tex.stackexchange.com/a/8633
 \usepackage{float}
 
+% glossary and acronyms also in table of content
+\usepackage[toc, acronym]{glossaries}
+
 % rename appendices to localize since was not done
 % REMOVE IF USING ENGLISH ONLY TO LOCALIZE
 \renewcommand\appendixtocname{Anhang}
@@ -98,6 +101,19 @@
 % final pdf should be gzipped so comment out then
 % \special{dvipdfmx:config z 0}
 
+
+%%%%%%% Glossary %%%%%%%%%%
+\makeglossaries
+
+\newacronym{yaml}{YAML}{Yet Another Markup Language}
+\newglossaryentry{maths}
+{
+    name=mathematics,
+    description={Mathematics is what mathematicians do}
+}
+
+
+
 \begin{document}
 
 \maketitle
@@ -125,6 +141,12 @@
 \section{Section Two}
 \subfile{sections/sectionTwo}
 
+%%%%%%%%%% Glossary and Acronyms %%%%%%%%
+% see https://www.overleaf.com/learn/latex/Glossaries
+
+\newpage
+\printglossary[title=Glossar, toctitle=Glossar]
+\printglossary[type=\acronymtype, title=Akronyme, toctitle=Liste der Akronyme]
 
 %%%%%%%%%%% Bilbiography %%%%%%%%%%%%%%
 \newpage
