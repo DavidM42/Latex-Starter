@@ -12,7 +12,15 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v1
-      - name: Compile LaTeX document
+      - name: First LaTeX compile & biber & makeglossaries
+        uses: xu-cheng/latex-action@master
+        with:
+          post_compile: |
+            biber main
+            makeglossaries main
+          args: "-xelatex -file-line-error -interaction=nonstopmode"
+          root_file: main.tex
+      - name: Final combined LaTeX document compilation
         uses: xu-cheng/latex-action@master
         with:
           args: "-xelatex -file-line-error -interaction=nonstopmode"
